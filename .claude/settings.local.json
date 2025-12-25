@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet build:*)",
+      "Bash(dotnet --version:*)",
+      "Bash(dotnet clean:*)",
+      "Bash(cat:*)",
+      "Bash(rm:*)",
+      "Bash(where:*)",
+      "Bash(dotnet --list-sdks:*)"
+    ]
+  }
+}

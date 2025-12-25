@@ -11,6 +11,7 @@
     <IsAotCompatible Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net7.0'))">true</IsAotCompatible>
 	  <EnableMicrosoftExtensionsLoggingSourceGenerator>false</EnableMicrosoftExtensionsLoggingSourceGenerator>
 	  <EmitCompilerGeneratedFiles>false</EmitCompilerGeneratedFiles>
+	  <NoWarn>$(NoWarn);SYSLIB1006</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

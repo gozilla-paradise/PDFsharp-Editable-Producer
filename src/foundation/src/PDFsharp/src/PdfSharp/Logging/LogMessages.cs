@@ -65,96 +65,76 @@ namespace PdfSharp.Logging
     /// <summary>
     /// Defines the logging high performance messages of PDFsharp.
     /// </summary>
-    public static partial class LogMessages
+    public static class LogMessages
     {
-#pragma warning disable SYSLIB1006
+        public static void PdfDocumentCreated(this ILogger logger, string? documentName)
+        {
+            logger.Log(LogLevel.Information, new EventId(PdfSharpEventId.DocumentCreated, PdfSharpEventName.DocumentCreated),
+                "New PDF document '{DocumentName}' created.", documentName);
+        }
 
-        [LoggerMessage(
-            Level = LogLevel.Information,
-            EventId = PdfSharpEventId.DocumentCreated,
-            EventName = PdfSharpEventName.DocumentCreated,
-            Message = "New PDF document '{DocumentName}' created.")]
-        public static partial void PdfDocumentCreated(this ILogger logger,
-            string? documentName);
+        public static void PdfDocumentSaved(this ILogger logger, string? documentName)
+        {
+            logger.Log(LogLevel.Information, new EventId(PdfSharpEventId.DocumentSaved, PdfSharpEventName.DocumentSaved),
+                "PDF document '{DocumentName}' saved.", documentName);
+        }
 
-        [LoggerMessage(
-            Level = LogLevel.Information,
-            EventId = PdfSharpEventId.DocumentSaved,
-            EventName = PdfSharpEventName.DocumentSaved,
-            Message = "PDF document '{documentName}' saved.")]
-        public static partial void PdfDocumentSaved(this ILogger logger,
-            string? documentName);
+        public static void NewPdfPageCreated(this ILogger logger, string? documentName)
+        {
+            logger.Log(LogLevel.Information, new EventId(PdfSharpEventId.PageCreated, PdfSharpEventName.PageCreated),
+                "New PDF page added to document '{DocumentName}'.", documentName);
+        }
 
-        [LoggerMessage(
-            Level = LogLevel.Information,
-            EventId = PdfSharpEventId.PageCreated,
-            EventName = PdfSharpEventName.PageCreated,
-            Message = "New PDF page added to document '{documentName}'.")]
-        public static partial void NewPdfPageCreated(this ILogger logger,
-            string? documentName);
+        public static void ExistingPdfPageAdded(this ILogger logger, string? documentName)
+        {
+            logger.Log(LogLevel.Information, new EventId(PdfSharpEventId.PageAdded, PdfSharpEventName.PageAdded),
+                "Existing PDF page added to document '{DocumentName}'.", documentName);
+        }
 
-        [LoggerMessage(
-            Level = LogLevel.Information,
-            EventId = PdfSharpEventId.PageAdded,
-            EventName = PdfSharpEventName.PageAdded,
-            Message = "Existing PDF page added to document '{documentName}'.")]
-        public static partial void ExistingPdfPageAdded(this ILogger logger,
-            string? documentName);
-
-        [LoggerMessage(
-            Level = LogLevel.Information,
-            EventId = PdfSharpEventId.GraphicsCreated,
-            EventName = PdfSharpEventName.GraphicsCreated,
-            Message = "New XGraphics created from '{source}'.")]
-        public static partial void XGraphicsCreated(this ILogger logger,
-            string? source);
+        public static void XGraphicsCreated(this ILogger logger, string? source)
+        {
+            logger.Log(LogLevel.Information, new EventId(PdfSharpEventId.GraphicsCreated, PdfSharpEventName.GraphicsCreated),
+                "New XGraphics created from '{Source}'.", source);
+        }
 
         // Reading PDFs
 
-        [LoggerMessage(
-            Level = LogLevel.Error,
-            EventId = PdfSharpEventId.StreamIssue,
-            EventName = PdfSharpEventName.StreamIssue,
-            Message = "{Status} {BytesRead} of {Length} bytes were received. " +
-                      "We strongly recommend using streams with PdfReader whose content is fully available. " +
-                      "Copy the stream containing the file to a MemoryStream for example.")]
-        public static partial void StreamIssue(this ILogger logger,
-            string status, int bytesRead, int length);
+        public static void StreamIssue(this ILogger logger, string status, int bytesRead, int length)
+        {
+            logger.Log(LogLevel.Error, new EventId(PdfSharpEventId.StreamIssue, PdfSharpEventName.StreamIssue),
+                "{Status} {BytesRead} of {Length} bytes were received. " +
+                "We strongly recommend using streams with PdfReader whose content is fully available. " +
+                "Copy the stream containing the file to a MemoryStream for example.",
+                status, bytesRead, length);
+        }
 
-        [LoggerMessage(
-            Level = LogLevel.Warning,
-            EventId = PdfSharpEventId.EndOfStreamReached,
-            EventName = PdfSharpEventName.EndOfStreamReached,
-            Message = "End of stream reached while reading {Length} bytes at position {Position}, but got only {BytesRead} bytes.")]
-        public static partial void EndOfStreamReached(this ILogger logger,
-             int length, SizeType position, int bytesRead);
+        public static void EndOfStreamReached(this ILogger logger, int length, SizeType position, int bytesRead)
+        {
+            logger.Log(LogLevel.Warning, new EventId(PdfSharpEventId.EndOfStreamReached, PdfSharpEventName.EndOfStreamReached),
+                "End of stream reached while reading {Length} bytes at position {Position}, but got only {BytesRead} bytes.",
+                length, position, bytesRead);
+        }
 
-        [LoggerMessage(
-            Level = LogLevel.Warning,
-            EventId = PdfSharpEventId.SkippedIllegalBlanksAfterStreamKeyword,
-            EventName = PdfSharpEventName.SkippedIllegalBlanksAfterStreamKeyword,
-            Message = "Skipped {BlankCount} illegal blanks behind keyword 'stream' at position {Position} in object {ObjectId}.")]
-        public static partial void SkippedIllegalBlanksAfterStreamKeyword(this ILogger logger,
-            int blankCount, SizeType position, PdfObjectID objectId);
+        public static void SkippedIllegalBlanksAfterStreamKeyword(this ILogger logger, int blankCount, SizeType position, PdfObjectID objectId)
+        {
+            logger.Log(LogLevel.Warning, new EventId(PdfSharpEventId.SkippedIllegalBlanksAfterStreamKeyword, PdfSharpEventName.SkippedIllegalBlanksAfterStreamKeyword),
+                "Skipped {BlankCount} illegal blanks behind keyword 'stream' at position {Position} in object {ObjectId}.",
+                blankCount, position, objectId);
+        }
 
-        [LoggerMessage(
-            Level = LogLevel.Warning,
-            EventId = PdfSharpEventId.StreamKeywordFollowedBySingleCR,
-            EventName = PdfSharpEventName.StreamKeywordFollowedBySingleCR,
-            Message = "Keyword 'stream' followed by single CR is illegal at position {Position} in object {ObjectId}.")]
-        public static partial void StreamKeywordFollowedBySingleCR(this ILogger logger,
-            SizeType position, PdfObjectID objectId);
+        public static void StreamKeywordFollowedBySingleCR(this ILogger logger, SizeType position, PdfObjectID objectId)
+        {
+            logger.Log(LogLevel.Warning, new EventId(PdfSharpEventId.StreamKeywordFollowedBySingleCR, PdfSharpEventName.StreamKeywordFollowedBySingleCR),
+                "Keyword 'stream' followed by single CR is illegal at position {Position} in object {ObjectId}.",
+                position, objectId);
+        }
 
-        [LoggerMessage(
-            Level = LogLevel.Warning,
-            EventId = PdfSharpEventId.StreamKeywordFollowedByIllegalBytes,
-            EventName = PdfSharpEventName.StreamKeywordFollowedByIllegalBytes,
-            Message = "Keyword 'stream' followed by illegal bytes at position {Position} in object {ObjectId}.")]
-        public static partial void StreamKeywordFollowedByIllegalBytes(this ILogger logger,
-            SizeType position, PdfObjectID objectId);
-
-        //[LoggerMessage(EventId = 23, EventName = "hallo", Level = LogLevel.Warning, Message = "This is a warning: `{someText}`")]
-        //public static partial void WarningMessage(this ILogger logger, string someText);
+        public static void StreamKeywordFollowedByIllegalBytes(this ILogger logger, SizeType position, PdfObjectID objectId)
+        {
+            logger.Log(LogLevel.Warning, new EventId(PdfSharpEventId.StreamKeywordFollowedByIllegalBytes, PdfSharpEventName.StreamKeywordFollowedByIllegalBytes),
+                "Keyword 'stream' followed by illegal bytes at position {Position} in object {ObjectId}.",
+                position, objectId);
+        }
     }
 
 #if true_
