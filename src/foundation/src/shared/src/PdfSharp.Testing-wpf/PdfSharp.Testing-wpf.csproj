@@ -12,8 +12,6 @@
   <ItemGroup>
     <ProjectReference Include="..\PdfSharp.Shared\PdfSharp.Shared.csproj" />
     <ProjectReference Include="..\PdfSharp.System\PdfSharp.System.csproj" />
-    <ProjectReference Include="..\..\..\PDFsharp\src\PdfSharp-wpf\PdfSharp-wpf.csproj" />
-    <ProjectReference Include="..\PdfSharp.Quality-wpf\PdfSharp.Quality-wpf.csproj" />
   </ItemGroup>
 
 </Project>

@@ -109,7 +109,6 @@
   <ItemGroup>
    <ProjectReference Include="..\..\..\shared\src\PdfSharp.Shared\PdfSharp.Shared.csproj" />
     <ProjectReference Include="..\..\..\shared\src\PdfSharp.System\PdfSharp.System.csproj" />
-    <ProjectReference Include="..\PdfSharp-wpf\PdfSharp-wpf.csproj" />
   </ItemGroup>
 
 </Project>

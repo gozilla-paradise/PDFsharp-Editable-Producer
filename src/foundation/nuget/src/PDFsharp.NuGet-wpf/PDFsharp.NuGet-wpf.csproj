@@ -21,7 +21,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\PDFsharp\src\PdfSharp-wpf\PdfSharp-wpf.csproj" />
     <ProjectReference Include="..\..\..\src\PDFsharp\src\PdfSharp.BarCodes-wpf\PdfSharp.BarCodes-wpf.csproj" />
     <ProjectReference Include="..\..\..\src\PDFsharp\src\PdfSharp.Charting-wpf\PdfSharp.Charting-wpf.csproj" />
     <ProjectReference Include="..\..\..\src\PDFsharp\src\PdfSharp.Cryptography\PdfSharp.Cryptography.csproj" />

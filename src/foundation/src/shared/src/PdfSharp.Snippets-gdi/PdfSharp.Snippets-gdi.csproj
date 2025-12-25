@@ -85,8 +85,6 @@
   <ItemGroup>
     <ProjectReference Include="..\PdfSharp.Shared\PdfSharp.Shared.csproj" />
     <ProjectReference Include="..\PdfSharp.System\PdfSharp.System.csproj" />
-    <ProjectReference Include="..\..\..\PDFsharp\src\PdfSharp-gdi\PdfSharp-gdi.csproj" />
-    <ProjectReference Include="..\PdfSharp.Quality-gdi\PdfSharp.Quality-gdi.csproj" />
     <ProjectReference Include="..\PdfSharp.WPFonts\PdfSharp.WPFonts.csproj" />
   </ItemGroup>
 

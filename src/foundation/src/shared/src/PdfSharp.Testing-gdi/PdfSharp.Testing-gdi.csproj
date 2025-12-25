@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>net8.0-windows;net9.0-windows;net10.0-windows;net462</TargetFrameworks>
@@ -12,8 +12,6 @@
   <ItemGroup>
     <ProjectReference Include="..\PdfSharp.Shared\PdfSharp.Shared.csproj" />
     <ProjectReference Include="..\PdfSharp.System\PdfSharp.System.csproj" />
-    <ProjectReference Include="..\..\..\PDFsharp\src\PdfSharp-gdi\PdfSharp-gdi.csproj" />
-    <ProjectReference Include="..\PdfSharp.Quality-gdi\PdfSharp.Quality-gdi.csproj" />
   </ItemGroup>
 
 </Project>
