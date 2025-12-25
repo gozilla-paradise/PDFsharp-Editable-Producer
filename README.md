@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://docs.pdfsharp.net/images/PDFsharp-Logo-400.png" alt="PDFsharp Logo" width="300"/>
+  <img src="https://www.pdfsharp.com/assets/img/PDFsharp-Logo-lowquality.png" alt="PDFsharp Logo" width="300"/>
 </p>
 
 <h1 align="center">PDFsharp 6</h1>
