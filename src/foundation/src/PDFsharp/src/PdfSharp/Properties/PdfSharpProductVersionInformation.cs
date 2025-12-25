@@ -47,13 +47,13 @@ namespace PdfSharp
         /// <summary>
         /// The PDF creator application information string.
         /// </summary>
-        public static readonly string Creator = $"{Title} {PdfSharpGitVersionInformation.InformationalVersion}{Technology}";
+        public static readonly string Creator = $"";
 
         /// <summary>
         /// The PDF producer (created by) information string.
         /// TODO_OLD: Called Creator in MigraDoc???
         /// </summary>
-        public static readonly string Producer = $"{Title} {PdfSharpGitVersionInformation.InformationalVersion} ({Url})";
+        public static readonly string Producer = $"";
 
         /// <summary>
         /// The full version number.

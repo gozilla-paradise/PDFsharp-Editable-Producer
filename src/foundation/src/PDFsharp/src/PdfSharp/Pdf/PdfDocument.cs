@@ -472,7 +472,7 @@ namespace PdfSharp.Pdf
 
             // Set Creator if value is undefined. This is the 'application' in Adobe Reader.
             if (info.Elements[PdfDocumentInformation.Keys.Creator] is null)
-                info.Creator = PdfSharpProductVersionInformation.Producer;
+                info.Creator = "";
 
             // We set Producer if it is not yet set.
             var pdfProducer = PdfSharpProductVersionInformation.Creator;
@@ -485,12 +485,6 @@ namespace PdfSharp.Pdf
             if (producer.Length == 0)
             {
                 producer = pdfProducer;
-            }
-            else
-            {
-                // Prevent endless concatenation if file is edited with PDFsharp more than once.
-                if (!producer.StartsWith(PdfSharpProductVersionInformation.Title, StringComparison.Ordinal))
-                    producer = $"{pdfProducer} (Original: {producer})";
             }
             info.Elements.SetString(PdfDocumentInformation.Keys.Producer, producer);
 
