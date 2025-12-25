@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>library</OutputType>
-    <TargetFrameworks>net8.0;net9.0;net10.0;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net10.0</TargetFrameworks>
     <!--<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>-->
     <RootNamespace>PdfSharp</RootNamespace>
     <DefineConstants>CORE</DefineConstants>
@@ -9,6 +9,8 @@
     <AssemblyOriginatorKeyFile>..\..\..\..\..\StrongnameKey.snk</AssemblyOriginatorKeyFile>
     <IsTrimmable Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net6.0'))">true</IsTrimmable>
     <IsAotCompatible Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net7.0'))">true</IsAotCompatible>
+	  <EnableMicrosoftExtensionsLoggingSourceGenerator>false</EnableMicrosoftExtensionsLoggingSourceGenerator>
+	  <EmitCompilerGeneratedFiles>false</EmitCompilerGeneratedFiles>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
