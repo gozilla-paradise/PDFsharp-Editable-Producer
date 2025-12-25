@@ -13,7 +13,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\tools\src\PdfSharp.TestHelper-wpf\PdfSharp.TestHelper-wpf.csproj" />
     <ProjectReference Include="..\..\..\shared\src\PdfSharp.Quality-wpf\PdfSharp.Quality-wpf.csproj" />
     <ProjectReference Include="..\..\..\shared\src\PdfSharp.Snippets-wpf\PdfSharp.Snippets-wpf.csproj" />
     <ProjectReference Include="..\..\..\shared\src\PdfSharp.WPFonts\PdfSharp.WPFonts.csproj" />

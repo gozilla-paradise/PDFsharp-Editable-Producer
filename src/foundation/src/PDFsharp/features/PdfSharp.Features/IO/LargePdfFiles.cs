@@ -13,7 +13,6 @@ using PdfSharp.Pdf.IO;
 using PdfSharp.Quality;
 using PdfSharp.Snippets;
 using PdfSharp.Snippets.Font;
-using PdfSharp.TestHelper;
 
 #pragma warning disable 1591
 namespace PdfSharp.Features.IO

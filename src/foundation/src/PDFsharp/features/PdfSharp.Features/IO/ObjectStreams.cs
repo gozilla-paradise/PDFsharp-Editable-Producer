@@ -5,7 +5,6 @@ using System.IO;
 using System.Diagnostics;
 using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
-using PdfSharp.TestHelper;
 
 #pragma warning disable 1591
 namespace PdfSharp.Features.IO
