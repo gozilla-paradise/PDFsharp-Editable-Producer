@@ -38,12 +38,19 @@ foreach ($asset in $assetList) {
     $dest = $destination + $asset
 
     $folder = [IO.Path]::GetDirectoryName($dest)
+
     New-Item -ItemType Directory -Path $folder -Force
 
     Invoke-WebRequest $url -OutFile $dest
 
-    $idx = $asset.LastIndexOf("/")
+    $idx = $asset.LastIndexOf("/") - 13
+    Write-Output "Text $asset"
+    Write-Output "Index $idx"
+
     $assetFolder = $asset.Substring(0, $idx)
+
+    Write-Output "Extracting $assetFolder"
+
     Expand-Archive -Force "$destination/$asset" -DestinationPath "$destination/$assetFolder"
 
     Remove-Item "$destination/$asset"
