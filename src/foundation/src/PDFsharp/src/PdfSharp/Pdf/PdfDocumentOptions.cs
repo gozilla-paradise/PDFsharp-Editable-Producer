@@ -97,18 +97,5 @@ namespace PdfSharp.Pdf
 #else
         PdfWriterLayout _writerLayout = PdfWriterLayout.Compact;
 #endif
-
-        /// <summary>
-        /// Gets or sets a value indicating whether to linearize the PDF for fast web view.
-        /// Linearization optimizes the PDF for progressive downloading, allowing the first
-        /// page to display while remaining pages load in the background.
-        /// Note: Linearization is automatically skipped for encrypted documents.
-        /// </summary>
-        public bool Linearize
-        {
-            get => _linearize;
-            set => _linearize = value;
-        }
-        bool _linearize;
     }
 }

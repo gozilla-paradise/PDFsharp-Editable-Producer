@@ -56,21 +56,10 @@ namespace PdfSharp.Pdf.Advanced
             set => Elements.SetInteger(Keys.Size, value);
         }
 
-        /// <summary>
-        /// Gets or sets the byte offset to the previous cross-reference section.
-        /// Used for linearized PDFs and incremental updates.
-        /// </summary>
-        public long Prev
-        {
-            get => Elements.GetInteger(Keys.Prev);
-            set
-            {
-                if (value > 0)
-                    Elements.SetInteger(Keys.Prev, (int)value);
-                else
-                    Elements.Remove(Keys.Prev);
-            }
-        }
+        //public int Prev needed when linearized..
+        //{
+        //  get {return Elements.GetInteger(Keys.Prev);}
+        //}
 
         public PdfDocumentInformation Info => (PdfDocumentInformation)Elements.GetValue(Keys.Info, VCF.CreateIndirect)!; // Because of CreateIndirect.
 

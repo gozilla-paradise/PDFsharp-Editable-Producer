@@ -13,7 +13,6 @@ using PdfSharp.Pdf.Internal;
 using PdfSharp.Pdf.IO;
 using PdfSharp.Pdf.AcroForms;
 using PdfSharp.Pdf.Filters;
-using PdfSharp.Pdf.Linearization;
 using PdfSharp.Pdf.Security;
 using PdfSharp.Pdf.Signatures;
 using PdfSharp.Pdf.Structure;
@@ -356,15 +355,6 @@ namespace PdfSharp.Pdf
                     Trailer.Elements.Remove(PdfTrailer.Keys.Encrypt);
 
                 PrepareForSave();
-
-                // Check for linearization (Fast Web View)
-                // Linearization is skipped for encrypted documents
-                if (Options.Linearize && effectiveSecurityHandler == null)
-                {
-                    var linearizedWriter = new LinearizedPdfWriter(this, writer);
-                    await linearizedWriter.WriteAsync().ConfigureAwait(false);
-                    return;
-                }
 
                 effectiveSecurityHandler?.PrepareForWriting();
 
